@@ -1,5 +1,5 @@
 body.x-body {
-    background: hsl(202deg 32% 23%) url(images/background.jpg)  center no-repeat;
+    background: hsl(202deg 32% 23%) url(images/background.jpg) center no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -53,8 +53,8 @@ a {
 .x-toolbar-footer {
     background-color: transparent;
 }
-.x-img.x-img-default{
-    filter: invert()
+.x-img.x-img-default {
+    filter: invert();
 }
 
 /* Buttons */
@@ -103,9 +103,6 @@ a {
 }
 .x-panel-bodyWrap[id^='mapView-'] .x-panel-header-title-default {
     display: none;
-}
-.ol-zoom.ol-control {
-    top: 40px;
 }
 
 .x-splitter {
@@ -176,4 +173,19 @@ fieldset.x-fieldset {
 }
 .x-menu-item-icon.x-menu-item-icon-default {
     color: #fff;
+}
+
+/* Open Layers */
+
+.ol-zoom.ol-control {
+    top: 40px;
+}
+.layer-switcher {
+    top: 5em;
+}
+.layer-switcher .panel {
+    background: hsl(202deg 11% 21%);
+}
+.layer-switcher li input {
+    left: 0;
 }
