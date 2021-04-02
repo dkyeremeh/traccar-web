@@ -54,11 +54,13 @@ Ext.define('Traccar.view.Main', {
             items: [
                 {
                     region: 'center',
-                    xtype: 'devicesView'
+                    xtype: 'devicesView',
+                    flex: 4
                 },
                 {
                     region: 'south',
-                    xtype: 'stateView'
+                    xtype: 'stateView',
+                    flex: 5
                 }
             ]
         },
