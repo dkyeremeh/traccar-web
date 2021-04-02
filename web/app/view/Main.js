@@ -37,48 +37,61 @@ Ext.define('Traccar.view.Main', {
         collapsible: true,
         split: true
     },
-
-    items: [{
-        region: 'west',
-        layout: 'border',
-        width: Traccar.Style.deviceWidth,
-        title: Strings.devicesAndState,
-        titleCollapse: true,
-        floatable: false,
-        stateful: true,
-        stateId: 'devices-and-state-panel',
-
-        defaults: {
-            split: true,
-            flex: 1
+    items: [
+        {
+            region: 'west',
+            layout: 'border',
+            width: Traccar.Style.deviceWidth,
+            title: Strings.devicesAndState,
+            titleCollapse: true,
+            floatable: false,
+            stateful: true,
+            stateId: 'devices-and-state-panel',
+            defaults: {
+                split: true,
+                flex: 1
+            },
+            items: [
+                {
+                    region: 'center',
+                    xtype: 'devicesView'
+                },
+                {
+                    region: 'south',
+                    xtype: 'stateView'
+                }
+            ]
         },
 
-        items: [{
+        {
             region: 'center',
-            xtype: 'devicesView'
-        }, {
-            region: 'south',
-            xtype: 'stateView'
-        }]
-    }, {
-        region: 'south',
-        xtype: 'reportView',
-        reference: 'reportView',
-        height: Traccar.Style.reportHeight,
-        collapsed: true,
-        titleCollapse: true,
-        floatable: false
-    }, {
-        region: 'center',
-        xtype: 'mapView',
-        collapsible: false
-    }, {
-        region: 'east',
-        xtype: 'eventsView',
-        reference: 'eventsView',
-        width: Traccar.Style.deviceWidth,
-        collapsed: true,
-        titleCollapse: true,
-        floatable: false
-    }]
+            xtype: 'mapView',
+            collapsible: false
+        },
+        {
+            region: 'east',
+            layout: 'border',
+            width: Traccar.Style.deviceWidth,
+            title: 'Events & Report',
+            collapsed: true,
+            titleCollapse: true,
+            floatable: false,
+            defaults: {
+                split: true,
+                flex: 1
+            },
+            items: [
+                {
+                    region: 'center',
+                    xtype: 'eventsView',
+                    reference: 'eventsView'
+                },
+                {
+                    region: 'south',
+                    xtype: 'reportView',
+                    reference: 'reportView'
+                }
+            ]
+        }
+    ]
 });
