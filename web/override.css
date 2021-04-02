@@ -1,0 +1,176 @@
+body.x-body {
+    background: hsl(202deg 32% 23%) url(img/car.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+body.x-body.x-container {
+    background: hsl(202deg 32% 23%) !important;
+}
+
+a {
+    color: inherit;
+}
+.x-panel-bodyWrap[id^='mapView-'] .x-toolbar {
+    background-color: transparent !important;
+}
+
+.x-column-header {
+    background-color: hsl(202deg 33% 20%) !important;
+    border-width: 0 !important;
+}
+.x-css-shadow {
+    box-shadow: #111 0px 0px 6px !important;
+}
+
+/* .x-body, */
+.x-panel-body-default,
+.x-panel-body-default .x-fieldset,
+.x-menu-body-default,
+.x-window-default,
+.x-window-body-default {
+    background: hsl(202deg 32% 23%) !important;
+    border-width: 0 !important;
+    color: #fff !important;
+}
+
+.x-menu-item-focus.x-menu-item-active {
+    background-color: hsl(202deg 11% 21%) !important;
+}
+
+.x-panel-body-default .x-fieldset {
+    border-width: 1px !important;
+}
+
+/* ToolBar */
+.toolbar-header-style,
+.x-toolbar-default,
+.x-panel-header,
+.x-header,
+.x-region-collapsed-placeholder {
+    background-color: hsl(202deg 32% 23%) !important;
+    border-width: 0 !important;
+}
+.x-toolbar-footer {
+    background-color: transparent;
+}
+
+/* Buttons */
+.x-btn-default-small {
+    background-color: hsl(202deg 32% 23%) !important;
+    border-color: transparent !important;
+}
+.x-btn:hover,
+.x-btn-default-small:hover,
+.x-btn-default-toolbar-small:hover {
+    background-color: hsl(202deg 11% 21%);
+}
+.x-btn-inner-default-small {
+    color: #fff;
+}
+
+.x-btn-default-toolbar-small {
+    background-color: hsl(202deg 32% 23%) !important;
+    outline: 0 !important;
+    border-radius: 100px;
+}
+
+.x-panel-bodyWrap[id^='mapView-'] .x-btn-default-toolbar-small {
+    border: 0 !important;
+}
+
+.x-btn-icon-el-default-toolbar-small {
+    color: #fff;
+}
+
+/* Table */
+.x-column-header {
+    border-width: 0 !important;
+}
+.x-column-header-over,
+.x-column-header-trigger {
+    background: hsl(202deg 11% 21%) !important;
+}
+
+/* Layout */
+
+.x-panel-bodyWrap[id^='mapView-'] .x-panel-body {
+    height: 100vh !important;
+    top: 0 !important;
+    filter: hue-rotate(6deg) saturate(5) grayscale(0.65);
+}
+.x-panel-bodyWrap[id^='mapView-'] .x-panel-header-title-default {
+    display: none;
+}
+.ol-zoom.ol-control {
+    top: 40px;
+}
+
+.x-splitter {
+    border: 0 !important;
+    outline: 0 !important;
+    background-color: hsl(202deg 32% 23%);
+}
+
+.x-layout-split-left,
+.x-layout-split-right,
+.x-layout-split-bottom {
+    background: hsl(202deg 32% 23%);
+    color: #fff;
+    position: relative;
+    z-index: 16;
+    height: 38px !important;
+    width: 19px;
+    box-sizing: border-box;
+}
+.x-layout-split-left {
+    left: 9px;
+    border-radius: 0 30px 30px 0;
+    padding-right: 9px !important;
+}
+.x-layout-split-right {
+    left: -19px;
+    border-radius: 30px 0 0 30px;
+    padding-left: 9px;
+}
+.x-layout-split-bottom {
+    top: -18px;
+    height: 19px !important;
+    width: 38px !important;
+    padding-top: 9px !important;
+    border-radius: 30px 30px 0 0;
+}
+
+.x-grid-item {
+    background-color: inherit;
+    color: #fff;
+}
+.x-grid-item-alt {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    color: #fff;
+}
+.x-grid-body {
+    border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+/* Text */
+span,
+p,
+.x-form-item-label-default,
+.x-column-header,
+.x-fieldset-header-text {
+    color: white !important;
+}
+
+div,
+table,
+fieldset.x-fieldset {
+    border-color: hsl(202deg 21% 32%) !important;
+}
+
+/* Icons */
+.x-btn-wrap-default-toolbar-small:after {
+    color: #ccc !important;
+}
+.x-menu-item-icon.x-menu-item-icon-default {
+    color: #fff;
+}

@@ -1,31 +1,26 @@
 'use strict';
 
-const pngquant = require('imagemin-pngquant');
-const jpegtran = require('imagemin-mozjpeg');
-const svgo = require('imagemin-svgo');
-const gifsicle = require('imagemin-gifsicle');
-
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     var config = {
-        // cssmin: {
-        //     build: {
-        //         files: {
-        //             "web/css/min.css": [
-        //             ]
-        //         }
-        //     }
-        // },
+        cssmin: {
+            build: {
+                files: {
+                    'web/min.css': ['web/app.css', 'web/override.css']
+                }
+            }
+        },
 
         uglify: {
             build: {
                 options: {
-                    mangle: false,
-                    compress: false
+                    mangle: true,
+                    compress: true
                 },
                 files: {
                     'web/app.min.js': [
+                        'web/load.js',
                         'web/app/view/TouchFix62.js',
                         'web/app/Style.js',
                         'web/app/AttributeFormatter.js',
@@ -221,71 +216,19 @@ module.exports = function(grunt) {
                         'web/app/view/Main.js',
                         'web/app/view/MainMobile.js',
                         'web/app/controller/Root.js',
-                        'web/app/Application.js'
+                        'web/app/Application.js',
+
+                        'web/app.js'
                     ]
                 }
             }
         }
-
-        // babel: {
-        //     build: {
-        //         files: {
-        //             "web/css/min.css": ["web/css/min.es6.css"]
-        //         }
-        //     }
-        // },
-
-        // imagemin: {
-        //     static: {
-        //         options: {
-        //             progressive: true,
-        //             optimizationLevel: 7,
-        //             svgoPlugins: [{ removeViewBox: false }],
-        //             use: [
-        //                 pngquant(),
-        //                 jpegtran({ quality: 75 }),
-        //                 svgo(),
-        //                 gifsicle()
-        //             ]
-        //         },
-        //         files: [
-        //             {
-        //                 expand: true,
-        //                 cwd: "web/img/src/",
-        //                 src: ["**/*.{png,jpg,gif}"],
-        //                 dest: "web/img/"
-        //             }
-        //         ]
-        //     }
-        // },
-
-        // watch: {
-        //     css: {
-        //         files: [
-        //         ],
-        //         tasks: ["css"]
-        //     },
-
-        //     js: {
-        //         files: [
-        //         ],
-        //         tasks: ["js"]
-        //     },
-
-        //     gruntFile: {
-        //         files: "Gruntfile.js",
-        //         tasks: ["css", "js"]
-        //     }
-        // }
     };
 
     // configure the tasks
     grunt.initConfig(config);
 
     // define the tasks
-    // grunt.registerTask("css", "Compiles the stylesheets.", ["cssmin"]);
+    grunt.registerTask('css', 'Compiles the stylesheets.', ['cssmin']);
     grunt.registerTask('js', 'Compiles the JavaScript files.', ['uglify']);
-    // grunt.registerTask("img", "Compiles images in web/img/src", [
-    //     "imagemin"
-    // ]);
 };

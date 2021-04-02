@@ -7,16 +7,10 @@
         "grunt-contrib-cssmin": "3.0.x",
         "grunt-contrib-imagemin": "^3.0.0",
         "grunt-contrib-uglify": "^4.0.1",
-        "grunt-contrib-watch": "1.1.x",
-        "imagemin-gifsicle": "^7.0.0",
-        "imagemin-mozjpeg": "^8.0.0",
-        "imagemin-pngquant": "^8.0.0",
-        "imagemin-svgo": "^7.1.0",
         "load-grunt-tasks": "^5.0.0"
     },
     "scripts": {
         "lint": "./node_modules/.bin/eslint web/.",
-        "build": "grunt js",
-        "watch": "grunt watch"
+        "build": "grunt js css"
     }
 }
