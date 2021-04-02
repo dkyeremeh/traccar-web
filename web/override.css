@@ -1,5 +1,5 @@
 body.x-body {
-    background: hsl(202deg 32% 23%) url(img/car.jpg) no-repeat;
+    background: hsl(202deg 32% 23%) url(images/background.jpg)  center no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -52,6 +52,9 @@ a {
 }
 .x-toolbar-footer {
     background-color: transparent;
+}
+.x-img.x-img-default{
+    filter: invert()
 }
 
 /* Buttons */

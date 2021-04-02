@@ -20,7 +20,6 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'web/app.min.js': [
-                        'web/load.js',
                         'web/app/view/TouchFix62.js',
                         'web/app/Style.js',
                         'web/app/AttributeFormatter.js',
@@ -221,6 +220,23 @@ module.exports = function(grunt) {
                         'web/app.js'
                     ]
                 }
+            }
+        },
+
+        watch: {
+            css: {
+                files: ['web/css/*.css', '!web/min.css'],
+                tasks: ['css']
+            },
+
+            js: {
+                files: ['web/**/*.js', '!web/app.min.js'],
+                tasks: ['js']
+            },
+
+            gruntFile: {
+                files: 'Gruntfile.js',
+                tasks: ['css', 'js']
             }
         }
     };
