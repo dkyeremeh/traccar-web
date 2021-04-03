@@ -47,10 +47,12 @@ Ext.define('Traccar.view.Main', {
             floatable: false,
             stateful: true,
             stateId: 'devices-and-state-panel',
+
             defaults: {
                 split: true,
                 flex: 1
             },
+
             items: [
                 {
                     region: 'center',
@@ -87,13 +89,12 @@ Ext.define('Traccar.view.Main', {
                     region: 'center',
                     xtype: 'eventsView',
                     reference: 'eventsView'
-                },
-                {
-                    region: 'south',
-                    xtype: 'reportView',
-                    reference: 'reportView'
                 }
             ]
+        },
+        {
+            xtype: 'reportView',
+            reference: 'reportView'
         }
     ]
 });

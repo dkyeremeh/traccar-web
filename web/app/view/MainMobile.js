@@ -31,43 +31,51 @@ Ext.define('Traccar.view.MainMobile', {
 
     layout: 'card',
 
-    items: [{
-        layout: 'border',
-
-        defaults: {
-            header: false,
-            collapsible: true,
-            split: true
+    items: [
+        {
+            layout: 'border',
+            defaults: {
+                header: false,
+                collapsible: true,
+                split: true
+            },
+            items: [
+                {
+                    region: 'center',
+                    xtype: 'mapView',
+                    collapsible: false,
+                    flex: 1
+                },
+                {
+                    region: 'south',
+                    title: Strings.deviceTitle,
+                    flex: 9,
+                    collapsed: true,
+                    titleCollapse: true,
+                    floatable: true,
+                    stateId: 'mobile-devices-grid',
+                    defaults: {
+                        split: true,
+                        flex: 1
+                    },
+                    items: [
+                        {
+                            xtype: 'devicesView',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'stateView',
+                            flex: 1
+                        }
+                    ]
+                }
+            ]
         },
-
-        items: [{
-            region: 'east',
-            xtype: 'stateView',
-            title: Strings.stateTitle,
-            flex: 4,
-            collapsed: true,
-            collapseMode: 'mini',
-            titleCollapse: true,
-            floatable: false,
-            stateId: 'mobile-state-grid'
-        }, {
-            region: 'center',
-            xtype: 'mapView',
-            collapsible: false,
-            flex: 2
-        }, {
-            region: 'south',
-            xtype: 'devicesView',
-            title: Strings.deviceTitle,
-            flex: 1,
-            collapsed: true,
-            titleCollapse: true,
-            floatable: false,
-            stateId: 'mobile-devices-grid'
-        }]
-    }, {
-        xtype: 'reportView'
-    }, {
-        xtype: 'eventsView'
-    }]
+        {
+            xtype: 'reportView'
+        },
+        {
+            xtype: 'eventsView'
+        }
+    ]
 });

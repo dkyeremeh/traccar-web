@@ -10,9 +10,6 @@ body.x-body.x-container {
 a {
     color: inherit;
 }
-.x-panel-bodyWrap[id^='mapView-'] .x-toolbar {
-    background-color: transparent !important;
-}
 
 .x-column-header {
     background-color: hsl(202deg 33% 20%) !important;
@@ -77,10 +74,6 @@ a {
     border-radius: 100px;
 }
 
-.x-panel-bodyWrap[id^='mapView-'] .x-btn-default-toolbar-small {
-    border: 0 !important;
-}
-
 .x-btn-icon-el-default-toolbar-small {
     color: #fff;
 }
@@ -95,14 +88,19 @@ a {
 }
 
 /* Layout */
-
+.x-panel-bodyWrap[id^='mapView-'] .x-toolbar {
+    background-color: rgba(40, 64, 77, 0.5) !important;
+}
 .x-panel-bodyWrap[id^='mapView-'] .x-panel-body {
     height: 100vh !important;
     top: 0 !important;
     filter: hue-rotate(6deg) saturate(5) grayscale(0.65);
 }
 .x-panel-bodyWrap[id^='mapView-'] .x-panel-header-title-default {
-    display: none;
+    font-weight: bold;
+}
+.x-panel-bodyWrap[id^='mapView-'] .x-btn-default-toolbar-small {
+    border: 0 !important;
 }
 
 .x-splitter {
@@ -177,10 +175,8 @@ fieldset.x-fieldset {
 
 /* Open Layers */
 
+.layer-switcher,
 .ol-zoom.ol-control {
-    top: 40px;
-}
-.layer-switcher {
     top: 5em;
 }
 .layer-switcher .panel {
@@ -188,4 +184,12 @@ fieldset.x-fieldset {
 }
 .layer-switcher li input {
     left: 0;
+}
+
+.ol-attribution:not(.ol-collapsed){
+    background: rgba(48, 55, 59, 0.77);
+}
+.ol-attribution ul{
+    text-shadow: none;
+    color: #fff;
 }
