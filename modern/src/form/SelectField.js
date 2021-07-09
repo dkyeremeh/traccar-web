@@ -33,19 +33,18 @@ const SelectField = ({
         <Select
           multiple={multiple}
           value={value}
-          onChange={onChange}>
+          onChange={onChange}
+        >
           {!multiple && emptyValue !== null &&
-            <MenuItem value={emptyValue}>&nbsp;</MenuItem>
-          }
+            <MenuItem value={emptyValue}>&nbsp;</MenuItem>}
           {items.map(item => (
             <MenuItem key={keyGetter(item)} value={keyGetter(item)}>{titleGetter(item)}</MenuItem>
           ))}
         </Select>
       </FormControl>
     );
-  } else {
-    return null;
   }
-}
+  return null;
+};
 
 export default SelectField;

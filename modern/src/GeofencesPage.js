@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
-    }
+    },
   },
   drawerPaper: {
     position: 'relative',
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       height: 250,
-    }
+    },
   },
   mapContainer: {
     flexGrow: 1,
@@ -46,8 +46,9 @@ const GeofencesPage = ({ width }) => {
       <div className={classes.content}>
         <Drawer
           anchor={isWidthUp('sm', width) ? 'left' : 'bottom'}
-          variant='permanent'
-          classes={{ paper: classes.drawerPaper }}>
+          variant="permanent"
+          classes={{ paper: classes.drawerPaper }}
+        >
           <GeofencesList />
         </Drawer>
         <div className={classes.mapContainer}>
@@ -61,6 +62,6 @@ const GeofencesPage = ({ width }) => {
       </div>
     </div>
   );
-}
+};
 
 export default withWidth()(GeofencesPage);

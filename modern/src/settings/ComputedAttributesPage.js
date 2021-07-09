@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import MainToolbar from '../MainToolbar';
-import { TableContainer, Table, TableRow, TableCell, TableHead, TableBody, makeStyles, IconButton } from '@material-ui/core';
+import {
+  TableContainer, Table, TableRow, TableCell, TableHead, TableBody, makeStyles, IconButton,
+} from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { useSelector } from 'react-redux';
+import MainToolbar from '../MainToolbar';
 import t from '../common/localization';
 import { useEffectAsync } from '../reactHelper';
 import EditCollectionView from '../EditCollectionView';
@@ -29,45 +31,43 @@ const ComputedAttributeView = ({ updateTimestamp, onMenuClick }) => {
 
   return (
     <TableContainer>
-    <Table>
-      <TableHead>
-        <TableRow>
-          {adminEnabled && <TableCell className={classes.columnAction} />}
-          <TableCell>{t('sharedDescription')}</TableCell>
-          <TableCell>{t('sharedAttribute')}</TableCell>
-          <TableCell>{t('sharedExpression')}</TableCell>
-          <TableCell>{t('sharedType')}</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {items.map((item) => (
-          <TableRow key={item.id}>
-            {adminEnabled &&
+      <Table>
+        <TableHead>
+          <TableRow>
+            {adminEnabled && <TableCell className={classes.columnAction} />}
+            <TableCell>{t('sharedDescription')}</TableCell>
+            <TableCell>{t('sharedAttribute')}</TableCell>
+            <TableCell>{t('sharedExpression')}</TableCell>
+            <TableCell>{t('sharedType')}</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {items.map((item) => (
+            <TableRow key={item.id}>
+              {adminEnabled && (
               <TableCell className={classes.columnAction} padding="none">
                 <IconButton onClick={(event) => onMenuClick(event.currentTarget, item.id)}>
                   <MoreVertIcon />
                 </IconButton>
               </TableCell>
-            }
-            <TableCell>{item.description}</TableCell>
-            <TableCell>{item.attribute}</TableCell>
-            <TableCell>{item.expression}</TableCell>
-            <TableCell>{item.type}</TableCell>            
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+              )}
+              <TableCell>{item.description}</TableCell>
+              <TableCell>{item.attribute}</TableCell>
+              <TableCell>{item.expression}</TableCell>
+              <TableCell>{item.type}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </TableContainer>
   );
-}
+};
 
-const ComputedAttributesPage = () => {
-  return (
-    <>
-      <MainToolbar />
-      <EditCollectionView content={ComputedAttributeView} editPath="/settings/attribute" endpoint="attributes/computed" />
-    </>
-  );
-}
+const ComputedAttributesPage = () => (
+  <>
+    <MainToolbar />
+    <EditCollectionView content={ComputedAttributeView} editPath="/settings/attribute" endpoint="attributes/computed" />
+  </>
+);
 
 export default ComputedAttributesPage;

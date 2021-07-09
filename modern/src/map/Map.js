@@ -1,8 +1,8 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './switcher/switcher.css';
 import maplibregl from 'maplibre-gl';
-import { SwitcherControl } from './switcher/switcher';
 import React, { useRef, useLayoutEffect, useEffect, useState } from 'react';
+import { SwitcherControl } from './switcher/switcher';
 import { deviceCategories } from '../common/deviceCategories';
 import { prepareIcon, loadImage } from './mapUtil';
 import { styleCarto, styleMapbox, styleOsm } from './mapStyles';

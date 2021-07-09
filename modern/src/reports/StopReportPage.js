@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme } from '@material-ui/core/styles';
 import { formatDistance, formatHours, formatDate, formatVolume } from '../common/formatter';
 import ReportFilter from './ReportFilter';
 import ReportLayoutPage from './ReportLayoutPage';
@@ -8,9 +8,10 @@ import { useAttributePreference } from '../common/preferences';
 import t from '../common/localization';
 
 const Filter = ({ setItems }) => {
-
   const handleSubmit = async (deviceId, from, to, mail, headers) => {
-    const query = new URLSearchParams({ deviceId, from, to, mail });
+    const query = new URLSearchParams({
+      deviceId, from, to, mail,
+    });
     const response = await fetch(`/api/reports/stops?${query.toString()}`, { headers });
     if (response.ok) {
       const contentType = response.headers.get('content-type');
@@ -22,13 +23,12 @@ const Filter = ({ setItems }) => {
         }
       }
     }
-  }
+  };
 
   return <ReportFilter handleSubmit={handleSubmit} />;
 };
 
 const StopReportPage = () => {
-
   const theme = useTheme();
 
   const distanceUnit = useAttributePreference('distanceUnit');
@@ -41,7 +41,7 @@ const StopReportPage = () => {
     field: 'startTime',
     type: 'dateTime',
     width: theme.dimensions.columnWidthDate,
-    valueFormatter: ({ value }) => formatDate(value), 
+    valueFormatter: ({ value }) => formatDate(value),
   }, {
     headerName: t('positionOdometer'),
     field: 'startOdometer',
@@ -53,7 +53,7 @@ const StopReportPage = () => {
     field: 'address',
     type: 'string',
     hide: true,
-    width: theme.dimensions.columnWidthString,    
+    width: theme.dimensions.columnWidthString,
   }, {
     headerName: t('reportEndTime'),
     field: 'endTime',
@@ -78,17 +78,18 @@ const StopReportPage = () => {
     type: 'number',
     width: theme.dimensions.columnWidthNumber,
     hide: true,
-    valueFormatter: ({ value }) => formatVolume(value, volumeUnit),    
-  }]
-  
+    valueFormatter: ({ value }) => formatVolume(value, volumeUnit),
+  }];
+
   return (
     <ReportLayoutPage filter={<Filter setItems={setItems} />}>
       <DataGrid
-        rows={items} 
-        columns={columns} 
-        hideFooter 
+        rows={items}
+        columns={columns}
+        hideFooter
         autoHeight
-        getRowId={() => Math.random()} />
+        getRowId={() => Math.random()}
+      />
     </ReportLayoutPage>
   );
 };

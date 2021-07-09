@@ -1,10 +1,10 @@
 import React from 'react';
-import MainToolbar from './MainToolbar';
 import { useHistory, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
+import MainToolbar from './MainToolbar';
 
 import t from './common/localization';
 import { useEffectAsync } from './reactHelper';
@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const EditItemView = ({ children, endpoint, item, setItem }) => {
+const EditItemView = ({
+  children, endpoint, item, setItem,
+}) => {
   const history = useHistory();
   const classes = useStyles();
   const { id } = useParams();
@@ -58,14 +60,14 @@ const EditItemView = ({ children, endpoint, item, setItem }) => {
   return (
     <>
       <MainToolbar />
-      <Container maxWidth='xs' className={classes.container}>
+      <Container maxWidth="xs" className={classes.container}>
         {children}
-        <FormControl fullWidth margin='normal'>
+        <FormControl fullWidth margin="normal">
           <div className={classes.buttons}>
-            <Button type='button' color='primary' variant='outlined' onClick={() => history.goBack()}>
+            <Button type="button" color="primary" variant="outlined" onClick={() => history.goBack()}>
               {t('sharedCancel')}
             </Button>
-            <Button type='button' color='primary' variant='contained' onClick={handleSave}>
+            <Button type="button" color="primary" variant="contained" onClick={handleSave}>
               {t('sharedSave')}
             </Button>
           </div>
@@ -73,6 +75,6 @@ const EditItemView = ({ children, endpoint, item, setItem }) => {
       </Container>
     </>
   );
-}
+};
 
 export default EditItemView;

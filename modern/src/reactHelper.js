@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 
 export const usePrevious = value => {

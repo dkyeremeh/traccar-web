@@ -3,11 +3,10 @@ import { List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
 import { Link, useLocation } from 'react-router-dom';
 
 const ReportSidebar = ({ routes }) => {
-
   const location = useLocation();
 
   return (
-    <List disablePadding style={{paddingTop: '16px'}}>
+    <List disablePadding style={{ paddingTop: '16px' }}>
       {routes.map((route, index) => (
         <ListItem
           disableRipple
@@ -15,7 +14,8 @@ const ReportSidebar = ({ routes }) => {
           key={`${route}${index}`}
           button
           to={route.href}
-          selected={route.href === location.pathname}>
+          selected={route.href === location.pathname}
+        >
           <ListItemIcon>
             {route.icon}
           </ListItemIcon>
@@ -23,7 +23,7 @@ const ReportSidebar = ({ routes }) => {
         </ListItem>
       ))}
     </List>
-  )
-}
+  );
+};
 
 export default ReportSidebar;

@@ -1,5 +1,5 @@
-import {  useDispatch, useSelector } from 'react-redux';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector, connect } from 'react-redux';
+
 import { geofencesActions, groupsActions, driversActions, maintenancesActions } from './store';
 import { useEffectAsync } from './reactHelper';
 
@@ -23,8 +23,8 @@ const CachingController = () => {
         dispatch(groupsActions.update(await response.json()));
       }
     }
-  }, [authenticated]); 
-  
+  }, [authenticated]);
+
   useEffectAsync(async () => {
     if (authenticated) {
       const response = await fetch('/api/drivers');
@@ -33,7 +33,7 @@ const CachingController = () => {
       }
     }
   }, [authenticated]);
-  
+
   useEffectAsync(async () => {
     if (authenticated) {
       const response = await fetch('/api/maintenance');
@@ -41,9 +41,9 @@ const CachingController = () => {
         dispatch(maintenancesActions.update(await response.json()));
       }
     }
-  }, [authenticated]);   
-  
+  }, [authenticated]);
+
   return null;
-}
+};
 
 export default connect()(CachingController);

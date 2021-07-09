@@ -19,6 +19,6 @@ const SelectedDeviceMap = () => {
   }, [mapCenter]);
 
   return null;
-}
+};
 
 export default SelectedDeviceMap;

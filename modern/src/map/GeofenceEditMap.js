@@ -1,13 +1,13 @@
-import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
+import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import theme from '@mapbox/mapbox-gl-draw/src/lib/theme';
 import { useEffect } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { map } from './Map';
 import { geofenceToFeature, geometryToArea } from './mapUtil';
-import { useDispatch, useSelector } from 'react-redux';
 import { geofencesActions } from '../store';
-import { useHistory } from 'react-router-dom';
 
 const draw = new MapboxDraw({
   displayControlsDefault: false,
@@ -17,15 +17,15 @@ const draw = new MapboxDraw({
   },
   userProperties: true,
   styles: [...theme, {
-    'id': 'gl-draw-title',
-    'type': 'symbol',
-    'filter': ['all'],
-    'layout': {
+    id: 'gl-draw-title',
+    type: 'symbol',
+    filter: ['all'],
+    layout: {
       'text-field': '{user_name}',
       'text-font': ['Roboto Regular'],
       'text-size': 12,
     },
-    'paint': {
+    paint: {
       'text-halo-color': 'white',
       'text-halo-width': 1,
     },
@@ -43,7 +43,7 @@ const GeofenceEditMap = () => {
     if (response.ok) {
       dispatch(geofencesActions.refresh(await response.json()));
     }
-  }
+  };
 
   useEffect(() => {
     refreshGeofences();
@@ -54,7 +54,7 @@ const GeofenceEditMap = () => {
       const feature = event.features[0];
       const newItem = { name: '', area: geometryToArea(feature.geometry) };
       draw.delete(feature.id);
-      const response = await fetch(`/api/geofences`, {
+      const response = await fetch('/api/geofences', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newItem),
@@ -100,6 +100,6 @@ const GeofenceEditMap = () => {
   }, [geofences]);
 
   return null;
-}
+};
 
 export default GeofenceEditMap;

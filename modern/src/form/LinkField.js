@@ -37,7 +37,7 @@ const LinkField = ({
     body[keyBase] = baseId;
     body[keyLink] = linkId;
     return body;
-  }
+  };
 
   const onChange = async event => {
     const oldValue = linked;
@@ -66,16 +66,16 @@ const LinkField = ({
         <Select
           multiple
           value={linked}
-          onChange={onChange}>
+          onChange={onChange}
+        >
           {items.map(item => (
             <MenuItem key={keyGetter(item)} value={keyGetter(item)}>{titleGetter(item)}</MenuItem>
           ))}
         </Select>
       </FormControl>
     );
-  } else {
-    return null;
   }
-}
+  return null;
+};
 
 export default LinkField;
