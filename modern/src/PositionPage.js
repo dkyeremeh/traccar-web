@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 
 import {
-  makeStyles, Typography, ListItem, ListItemText, ListItemSecondaryAction, List, Container, Paper, Divider,
+  makeStyles, Typography, ListItem, ListItemText, ListItemSecondaryAction,
+  List, Container, Paper, Divider,
 } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import t from './common/localization';
@@ -44,7 +45,7 @@ const PositionPage = () => {
 
   const attributesList = () => {
     const combinedList = { ...item, ...item.attributes };
-    return Object.entries(combinedList).filter(([_, value]) => typeof value !== 'object');
+    return Object.entries(combinedList).filter(([, value]) => typeof value !== 'object');
   };
 
   return (

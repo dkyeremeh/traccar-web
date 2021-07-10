@@ -39,7 +39,8 @@ const RegisterDialog = ({ showDialog, onResult }) => {
         message={t('loginCreated')}
       />
     );
-  } if (showDialog) {
+  }
+  if (showDialog) {
     return (
       <Dialog
         open
@@ -88,6 +89,8 @@ const RegisterDialog = ({ showDialog, onResult }) => {
       </Dialog>
     );
   }
+
+  return null;
 };
 
 export default RegisterDialog;
