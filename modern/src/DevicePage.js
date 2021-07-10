@@ -99,7 +99,12 @@ const DevicePage = () => {
                 variant="filled"
               />
               <FormControlLabel
-                control={<Checkbox checked={item.disabled} onChange={event => setItem({ ...item, disabled: event.target.checked })} />}
+                control={(
+                  <Checkbox
+                    checked={item.disabled}
+                    onChange={event => setItem({ ...item, disabled: event.target.checked })}
+                  />
+              )}
                 label={t('sharedDisabled')}
               />
             </AccordionDetails>

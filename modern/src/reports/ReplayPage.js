@@ -35,7 +35,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const TimeLabel = ({ children, open, value }) => (
-  <Tooltip open={open} enterTouchDelay={0} placement="top" title={value}>
+  <Tooltip
+    open={open} enterTouchDelay={0} placement="top"
+    title={value}
+  >
     {children}
   </Tooltip>
 );

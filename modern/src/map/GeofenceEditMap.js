@@ -90,7 +90,7 @@ const GeofenceEditMap = () => {
     });
 
     return () => map.removeControl(draw);
-  }, []);
+  }, []); //eslint-disable-line
 
   useEffect(() => {
     draw.deleteAll();

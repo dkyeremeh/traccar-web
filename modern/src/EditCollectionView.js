@@ -65,7 +65,10 @@ const EditCollectionView = ({
     <>
       <Content updateTimestamp={updateTimestamp} onMenuClick={menuShow} />
       {adminEnabled && !disableAdd && (
-        <Fab size="medium" color="primary" className={classes.fab} onClick={handleAdd}>
+        <Fab
+          size="medium" color="primary" className={classes.fab}
+          onClick={handleAdd}
+        >
           <AddIcon />
         </Fab>
       )}
@@ -73,7 +76,10 @@ const EditCollectionView = ({
         <MenuItem onClick={handleEdit}>{t('sharedEdit')}</MenuItem>
         <MenuItem onClick={handleRemove}>{t('sharedRemove')}</MenuItem>
       </Menu>
-      <RemoveDialog open={removeDialogShown} endpoint={endpoint} itemId={selectedId} onResult={handleRemoveResult} />
+      <RemoveDialog
+        open={removeDialogShown} endpoint={endpoint} itemId={selectedId}
+        onResult={handleRemoveResult}
+      />
     </>
   );
 };

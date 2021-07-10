@@ -11,8 +11,18 @@ const CustomizedAxisTick = ({ x, y, payload }) => {
   const parts = payload.value.split(' ');
   return (
     <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">{parts[0]}</text>
-      <text x={0} y={16} dy={16} textAnchor="end" fill="#666" transform="rotate(-35)">{parts[1]}</text>
+      <text
+        x={0} y={0} dy={16}
+        textAnchor="end" fill="#666" transform="rotate(-35)"
+      >
+        {parts[0]}
+      </text>
+      <text
+        x={0} y={16} dy={16}
+        textAnchor="end" fill="#666" transform="rotate(-35)"
+      >
+        {parts[1]}
+      </text>
     </g>
   );
 };

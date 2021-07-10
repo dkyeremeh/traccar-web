@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
-  FormControl, InputLabel, Select, MenuItem, TextField, Button, TableContainer, Table, TableRow, TableCell, TableHead, TableBody, Paper,
+  FormControl, InputLabel, Select, MenuItem, TextField, Button, TableContainer,
+  Table, TableRow, TableCell, TableHead, TableBody, Paper,
 } from '@material-ui/core';
 import moment from 'moment';
 import t from '../common/localization';
@@ -52,7 +53,10 @@ const Filter = ({ setItems }) => {
         break;
     }
 
-    const query = new URLSearchParams({ from: selectedFrom.toISOString(), to: selectedTo.toISOString() });
+    const query = new URLSearchParams({
+      from: selectedFrom.toISOString(),
+      to: selectedTo.toISOString(),
+    });
     const response = await fetch(`/api/statistics?${query.toString()}`, { Accept: 'application/json' });
     if (response.ok) {
       setItems(await response.json());
@@ -95,7 +99,12 @@ const Filter = ({ setItems }) => {
           fullWidth
         />
       )}
-      <Button variant="contained" color="primary" onClick={handleClick} fullWidth>{t('reportShow')}</Button>
+      <Button
+        variant="contained" color="primary" onClick={handleClick}
+        fullWidth
+      >
+        {t('reportShow')}
+      </Button>
     </>
   );
 };

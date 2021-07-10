@@ -36,6 +36,7 @@ module.exports = {
     }],
     'operator-linebreak': 'off',
     'react/jsx-filename-extension': 0,
+    'react/jsx-max-props-per-line': ['warn', { maximum: 3 }],
     'react/prop-types': 0,
   },
 };

@@ -46,7 +46,10 @@ const AddAttributeDialog = ({ open, onResult, definitions }) => {
           renderOption={option => option.name}
           freeSolo
           renderInput={(params) => (
-            <TextField {...params} label={t('sharedAttribute')} variant="filled" margin="normal" />
+            <TextField
+              {...params} label={t('sharedAttribute')} variant="filled"
+              margin="normal"
+            />
           )}
         />
         <FormControl
