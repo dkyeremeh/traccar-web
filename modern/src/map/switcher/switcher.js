@@ -1,4 +1,4 @@
-export class SwitcherControl {
+export default class SwitcherControl {
   constructor(styles, defaultStyle, beforeSwitch, afterSwitch) {
     this.styles = styles;
     this.defaultStyle = defaultStyle;
@@ -7,7 +7,7 @@ export class SwitcherControl {
     this.onDocumentClick = this.onDocumentClick.bind(this);
   }
 
-  getDefaultPosition() {
+  static getDefaultPosition() {
     return 'top-right';
   }
 
@@ -60,7 +60,10 @@ export class SwitcherControl {
   }
 
   onRemove() {
-    if (!this.controlContainer || !this.controlContainer.parentNode || !this.map || !this.styleButton) {
+    if (!this.controlContainer ||
+      !this.controlContainer.parentNode ||
+      !this.map || !this.styleButton
+    ) {
       return;
     }
     this.styleButton.removeEventListener('click', this.onDocumentClick);
@@ -70,7 +73,10 @@ export class SwitcherControl {
   }
 
   onDocumentClick(event) {
-    if (this.controlContainer && !this.controlContainer.contains(event.target) && this.mapStyleContainer && this.styleButton) {
+    if (this.controlContainer &&
+      !this.controlContainer.contains(event.target) &&
+      this.mapStyleContainer && this.styleButton
+    ) {
       this.mapStyleContainer.style.display = 'none';
       this.styleButton.style.display = 'block';
     }

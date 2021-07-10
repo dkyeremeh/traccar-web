@@ -24,7 +24,10 @@ export const prepareIcon = (background, icon, color) => {
     const iconRatio = 0.5;
     const imageWidth = canvas.width * iconRatio;
     const imageHeight = canvas.height * iconRatio;
-    context.drawImage(canvasTintImage(icon, color, 1), (canvas.width - imageWidth) / 2, (canvas.height - imageHeight) / 2, imageWidth, imageHeight);
+    context.drawImage(
+      canvasTintImage(icon, color, 1), (canvas.width - imageWidth) / 2,
+      (canvas.height - imageHeight) / 2, imageWidth, imageHeight,
+    );
   }
 
   return context.getImageData(0, 0, canvas.width, canvas.height);
@@ -33,11 +36,12 @@ export const prepareIcon = (background, icon, color) => {
 export const reverseCoordinates = it => {
   if (!it) {
     return it;
-  } if (Array.isArray(it)) {
+  }
+  if (Array.isArray(it)) {
     if (it.length === 2 && !Number.isNaN(it[0]) && !Number.isNaN(it[1])) {
       return [it[1], it[0]];
     }
-    return it.map(it => reverseCoordinates(it));
+    return it.map(i => reverseCoordinates(i));
   }
   return {
     ...it,
@@ -47,9 +51,15 @@ export const reverseCoordinates = it => {
 
 export const geofenceToFeature = (item) => {
   if (item.area.indexOf('CIRCLE') > -1) {
-    const coordinates = item.area.replace(/CIRCLE|\(|\)|,/g, ' ').trim().split(/ +/);
+    const coordinates = item.area.replace(/CIRCLE|\(|\)|,/g, ' ').trim()
+      .split(/ +/);
     const options = { steps: 32, units: 'meters' };
-    const polygon = circle([Number(coordinates[1]), Number(coordinates[0])], Number(coordinates[2]), options);
+    const polygon = circle(
+      [Number(coordinates[1]),
+        Number(coordinates[0])],
+      Number(coordinates[2]),
+      options,
+    );
     return {
       id: item.id,
       type: 'Feature',

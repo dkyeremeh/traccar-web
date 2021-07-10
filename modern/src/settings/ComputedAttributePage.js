@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
-  Accordion, AccordionSummary, AccordionDetails, makeStyles, Typography, FormControl, InputLabel, MenuItem, Select, TextField,
+  Accordion, AccordionSummary, AccordionDetails, makeStyles, Typography, FormControl,
+  InputLabel, MenuItem, Select, TextField,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import t from '../common/localization';

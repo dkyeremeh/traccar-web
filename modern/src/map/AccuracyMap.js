@@ -9,7 +9,10 @@ const AccuracyMap = () => {
 
   const positions = useSelector(state => ({
     type: 'FeatureCollection',
-    features: Object.values(state.positions.items).filter(position => position.accuracy > 0).map(position => circle([position.longitude, position.latitude], position.accuracy * 0.001)),
+    features: Object
+      .values(state.positions.items)
+      .filter(position => position.accuracy > 0)
+      .map(position => circle([position.longitude, position.latitude], position.accuracy * 0.001)),
   }));
 
   useEffect(() => {
@@ -42,7 +45,8 @@ const AccuracyMap = () => {
   }, []);
 
   useEffect(() => {
-    map.getSource(id).setData(positions);
+    map.getSource(id)
+      .setData(positions);
   }, [positions]);
 
   return null;

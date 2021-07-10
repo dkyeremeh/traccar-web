@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-
 import {
-  Button, Checkbox, FilledInput, FormControl, FormControlLabel, Grid, IconButton, InputAdornment, InputLabel, makeStyles,
+  Button, Checkbox, FilledInput, FormControl, FormControlLabel, Grid, IconButton,
+  InputAdornment, InputLabel, makeStyles,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import AddIcon from '@material-ui/icons/Add';

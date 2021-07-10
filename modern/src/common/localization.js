@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import af from '../../../web/l10n/af.json';
 import ar from '../../../web/l10n/ar.json';
 import az from '../../../web/l10n/az.json';
@@ -110,7 +111,9 @@ const supportedLanguages = {
   zh_TW: { data: zh_TW, name: '中文 (Taiwan)' },
 };
 
-const languages = window.navigator.languages !== undefined ? window.navigator.languages.slice() : [];
+const languages = window.navigator.languages !== undefined
+  ? window.navigator.languages.slice()
+  : [];
 let language = window.navigator.userLanguage || window.navigator.language;
 languages.push(language);
 languages.push(language.substring(0, 2));

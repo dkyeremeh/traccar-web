@@ -9,7 +9,9 @@ export const usePreference = (key, defaultValue) => useSelector(state => {
 
 export const useAttributePreference = (key, defaultValue) => useSelector(state => {
   if (state.session.server.forceSettings) {
-    return state.session.server.attributes[key] || state.session.user.attributes[key] || defaultValue;
+    return state.session.server.attributes[key]
+      || state.session.user.attributes[key]
+      || defaultValue;
   }
   return state.session.user.attributes[key] || state.session.server.attributes[key] || defaultValue;
 });

@@ -21,24 +21,30 @@ const Filter = ({ setItems }) => {
         selectedTo = moment().endOf('day');
         break;
       case 'yesterday':
-        selectedFrom = moment().subtract(1, 'day').startOf('day');
-        selectedTo = moment().subtract(1, 'day').endOf('day');
+        selectedFrom = moment().subtract(1, 'day')
+          .startOf('day');
+        selectedTo = moment().subtract(1, 'day')
+          .endOf('day');
         break;
       case 'thisWeek':
         selectedFrom = moment().startOf('week');
         selectedTo = moment().endOf('week');
         break;
       case 'previousWeek':
-        selectedFrom = moment().subtract(1, 'week').startOf('week');
-        selectedTo = moment().subtract(1, 'week').endOf('week');
+        selectedFrom = moment().subtract(1, 'week')
+          .startOf('week');
+        selectedTo = moment().subtract(1, 'week')
+          .endOf('week');
         break;
       case 'thisMonth':
         selectedFrom = moment().startOf('month');
         selectedTo = moment().endOf('month');
         break;
       case 'previousMonth':
-        selectedFrom = moment().subtract(1, 'month').startOf('month');
-        selectedTo = moment().subtract(1, 'month').endOf('month');
+        selectedFrom = moment().subtract(1, 'month')
+          .startOf('month');
+        selectedTo = moment().subtract(1, 'month')
+          .endOf('month');
         break;
       default:
         selectedFrom = from;

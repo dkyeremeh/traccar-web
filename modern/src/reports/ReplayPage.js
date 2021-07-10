@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
-  Accordion, AccordionDetails, AccordionSummary, Container, makeStyles, Paper, Slider, Tooltip, Typography,
+  Accordion, AccordionDetails, AccordionSummary, Container, makeStyles, Paper, Slider,
+  Tooltip, Typography,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MainToolbar from '../MainToolbar';

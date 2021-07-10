@@ -61,7 +61,9 @@ const NotificationPage = () => {
                   multiple
                   margin="normal"
                   value={item.attributes && item.attributes.alarms ? item.attributes.alarms.split(/[, ]+/) : []}
-                  onChange={e => setItem({ ...item, attributes: { ...item.attributes, alarms: e.target.value.join() } })}
+                  onChange={e => setItem(
+                    { ...item, attributes: { ...item.attributes, alarms: e.target.value.join() } },
+                  )}
                   data={alarms}
                   keyGetter={it => it.key}
                   label={t('sharedAlarms')}

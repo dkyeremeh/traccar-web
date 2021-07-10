@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
-  Grid, useMediaQuery, makeStyles, InputLabel, Select, MenuItem, FormControl, Button, TextField, Link,
+  Grid, useMediaQuery, makeStyles, InputLabel, Select, MenuItem,
+  FormControl, Button, TextField, Link,
 } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,8 +29,12 @@ const LoginForm = () => {
   const [failed, setFailed] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const registrationEnabled = useSelector(state => (state.session.server ? state.session.server.registration : false));
-  const emailEnabled = useSelector(state => (state.session.server ? state.session.server.emailEnabled : false));
+  const registrationEnabled = useSelector(
+    state => (state.session.server ? state.session.server.registration : false),
+  );
+  const emailEnabled = useSelector(
+    state => (state.session.server ? state.session.server.emailEnabled : false),
+  );
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -129,7 +134,13 @@ const LoginForm = () => {
         {emailEnabled && (
         <Grid item container justify="flex-end">
           <Grid item>
-            <Link onClick={() => history.push('/reset-password')} className={classes.resetPassword} underline="none">{t('loginReset')}</Link>
+            <Link
+              onClick={() => history.push('/reset-password')}
+              className={classes.resetPassword}
+              underline="none"
+            >
+              {t('loginReset')}
+            </Link>
           </Grid>
         </Grid>
         )}
